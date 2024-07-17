@@ -16,7 +16,7 @@ const Hero = () => {
             <br /> select split options, <br />
             add transactions, split
           </p>
-          <div className="mt-10 text-center">
+          <div className="mt-10 text-center lg:text-left">
             <Button onClick={() => navigate("signup")}>Get Started</Button>
           </div>
         </div>
