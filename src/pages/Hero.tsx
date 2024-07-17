@@ -8,15 +8,15 @@ const Hero = () => {
     <>
       <section className="h-fit space-y-9 items-center justify-center m-24 lg:flex lg:mx-96 lg:mt-40">
         <div className="lg:w-4/6 ">
-          <h1 className="w-[12ch] mb-8 text-5xl font-semibold lg:text-left">
+          <h1 className="w-[12ch] mb-8 text-5xl font-semibold text-center lg:text-left ">
             Split transactions with ease
           </h1>
-          <p className="text-xl lg:text-left">
+          <p className="text-xl text-center lg:text-left">
             Create groups, create activity,
             <br /> select split options, <br />
             add transactions, split
           </p>
-          <div className="mt-10">
+          <div className="mt-10 text-center">
             <Button onClick={() => navigate("signup")}>Get Started</Button>
           </div>
         </div>
