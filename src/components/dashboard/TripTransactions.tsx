@@ -187,6 +187,8 @@ const TripTransactions = ({
   ) => {
     e.preventDefault();
 
+    if (!selectedUser) return;
+
     await updateContributorAmount();
 
     const transactionItem: Transaction = {
