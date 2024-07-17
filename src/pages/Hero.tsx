@@ -9,12 +9,11 @@ const Hero = () => {
       <section className="h-fit space-y-9 items-center justify-center m-24 lg:flex lg:mx-80 lg:mt-40">
         <div className="lg:w-4/6 ">
           <h1 className="mb-8 text-5xl font-semibold text-center lg:text-left">
-            Bsplitz
+            Bsplit
           </h1>
           <p className="text-xl text-center lg:text-left">
-            Create groups, create activity,
-            <br /> select split options, <br />
-            add transactions, split
+            Split transactions
+            <br /> with ease
           </p>
           <div className="mt-10 text-center lg:text-left">
             <Button onClick={() => navigate("signup")}>Get Started</Button>

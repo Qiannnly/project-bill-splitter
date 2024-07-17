@@ -18,7 +18,7 @@ const NavBar = () => {
             className="text-3xl w-2/6 pt-3 z-10 "
             onClick={() => navigate("/dashboard")}
           >
-            Bsplitz
+            Bsplit
           </div>
           <div
             className={`bg-[#643A4C] w-full left-0 absolute justify-between  py-5 lg:flex lg:w-4/6 lg:static ${
