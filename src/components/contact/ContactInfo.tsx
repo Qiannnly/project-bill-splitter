@@ -138,7 +138,7 @@ const ContactInfo = () => {
           />
         </div>
 
-        <div className="space-y-9 lg:flex lg:space-y-0 border rounded-lg gap-5 lg:p-4">
+        <div className="space-y-9 lg:flex lg:space-y-0 lg:border lg:rounded-lg gap-5 lg:p-4">
           <StandardCard
             title={`${
               selectedGroup ? "Edit Contacts" : "Create Group and Add Contacts"
@@ -193,7 +193,7 @@ const ContactInfo = () => {
         </div>
         <div className="flex justify-center">
           <Button
-            className="w-3/6 mt-3 mb-10"
+            className="w-3/6 mt-8 mb-10"
             type="submit"
             onClick={handleSubmit}
           >
