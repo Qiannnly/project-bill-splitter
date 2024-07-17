@@ -42,8 +42,12 @@ const Profile = () => {
         </div>
 
         <ProfileCard title="My Profile">
-          <ProfileInput Icon={CircleUserIcon} value={userData.userName} />
-          <ProfileInput Icon={Mail} value={userData.email} />
+          {userData !== null && (
+            <>
+              <ProfileInput Icon={CircleUserIcon} value={userData.userName} />
+              <ProfileInput Icon={Mail} value={userData.email} />
+            </>
+          )}
           <ProfileInput Icon={Lock} value={"********"} />
           <div className="text-center mt-10">
             <Button variant="link" onClick={handleDelete}>
