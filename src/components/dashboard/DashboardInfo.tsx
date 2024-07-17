@@ -51,6 +51,12 @@ const DashboardInfo = () => {
   const numContacts = Number(groupContacts.length);
   let sumOfEqualSplit = 0;
 
+  console.log(activityId);
+  console.log(selectedGroup);
+  console.log(currentActivityId);
+  console.log(currentGroupId);
+  console.log(activityData.currentGroup);
+
   useEffect(() => {
     if (currentActivityId && currentGroupId) {
       setActivityId(currentActivityId);
@@ -74,6 +80,7 @@ const DashboardInfo = () => {
     groups.forEach((group) => {
       if (group.id === groupId) {
         const groupName = group.value;
+        console.log(groupName);
         activityInfo.currentGroup = groupName;
       }
     });
@@ -319,6 +326,13 @@ const DashboardInfo = () => {
         ...activityData,
         activityStatus: status,
       });
+      setUserTransactions([]);
+      setMessage([]);
+      setActivityData({
+        activityTitle: "",
+        currentGroup: "",
+        activityStatus: true,
+      });
     }
   };
 
@@ -328,7 +342,7 @@ const DashboardInfo = () => {
       {!isLoading && (
         <div className="lg:mx-80">
           <div>
-            <div className="space-y-9 lg:flex lg:space-y-0 border rounded-lg gap-5 lg:p-4">
+            <div className="space-y-9 lg:flex lg:space-y-0 lg:border lg:rounded-lg gap-5 lg:p-4">
               <StandardCard
                 title={
                   activityData.activityStatus
@@ -398,7 +412,7 @@ const DashboardInfo = () => {
               </StandardCard>
             </div>
             {activityData.activityStatus === false && (
-              <div className="flex mx-auto mt-5 justify-center items-center ">
+              <div className="flex mx-auto mt-8 mb-10 justify-center items-center ">
                 <Button onClick={handleCalculate}>Split transactions</Button>
               </div>
             )}
