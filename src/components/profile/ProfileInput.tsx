@@ -2,7 +2,7 @@ import { Input } from "../ui/input";
 
 type InputProps = {
   Icon: React.ElementType;
-  value: string | undefined;
+  value: string | null;
 };
 
 const ProfileInput = ({ Icon, value }: InputProps) => {
