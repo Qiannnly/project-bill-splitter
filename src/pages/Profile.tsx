@@ -20,7 +20,7 @@ const Profile = () => {
   });
 
   useEffect(() => {
-    if (user) {
+    if (user !== null) {
       const displayName = user.displayName;
       const email = user.email;
 
