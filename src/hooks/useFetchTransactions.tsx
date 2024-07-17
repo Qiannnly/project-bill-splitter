@@ -36,7 +36,7 @@ const useFetchTransactions = (groupId: string, activityId: string) => {
       }
       setTimeout(() => {
         setIsLoading(false);
-      }, 2000);
+      }, 1500);
     };
     fetchTransactions();
   }, [groupId, activityId]);
