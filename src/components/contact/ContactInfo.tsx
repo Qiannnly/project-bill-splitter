@@ -138,7 +138,7 @@ const ContactInfo = () => {
           />
         </div>
 
-        <div className="space-y-9 lg:flex lg:space-y-0 border rounded-lg p-4 gap-5">
+        <div className="space-y-9 lg:flex lg:space-y-0 border rounded-lg gap-5 lg:p-4">
           <StandardCard
             title={`${
               selectedGroup ? "Edit Contacts" : "Create Group and Add Contacts"
