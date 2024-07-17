@@ -130,7 +130,7 @@ const ContactInfo = () => {
   return (
     <>
       <div className="lg:mx-80">
-        <div className="mx-40 mb-10 mt-8 lg:mx-60">
+        <div className="mx-20 mb-10 mt-8 lg:mx-60">
           <SelectInput
             options={groups}
             onChange={setSelectedGroup}
@@ -192,7 +192,11 @@ const ContactInfo = () => {
           </StandardCard>
         </div>
         <div className="flex justify-center">
-          <Button className="w-3/6 mt-3" type="submit" onClick={handleSubmit}>
+          <Button
+            className="w-3/6 mt-3 mb-10"
+            type="submit"
+            onClick={handleSubmit}
+          >
             Continue
           </Button>
         </div>
