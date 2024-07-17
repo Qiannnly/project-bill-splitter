@@ -12,8 +12,8 @@ const NavBar = () => {
 
   return (
     <>
-      <nav className="w-full pt-4 pb-2 top-0 fixed text-white bg-[#643A4C]">
-        <div className="flex justify-between pb-2 px-8 items-center">
+      <nav className="w-full pt-2 pb-2 top-0 fixed text-white bg-[#643A4C]">
+        <div className="flex justify-between mb-5 px-8 items-center">
           <div
             className="text-3xl w-2/6 pt-3 z-10 "
             onClick={() => navigate("/dashboard")}
