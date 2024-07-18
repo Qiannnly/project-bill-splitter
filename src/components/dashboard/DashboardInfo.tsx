@@ -327,7 +327,7 @@ const DashboardInfo = () => {
         activityStatus: status,
       });
       setUserTransactions([]);
-      setMessage([]);
+
       setActivityData({
         activityTitle: "",
         currentGroup: "",
