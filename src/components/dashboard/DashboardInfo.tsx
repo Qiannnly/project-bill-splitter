@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Button } from "../ui/button";
-
 import { Input } from "../ui/input";
 import { useUserContext } from "../../context/UserContext";
 import { db } from "../../firebaseConfig";
@@ -19,7 +18,7 @@ import SelectInput from "../select/SelectInput";
 import StandardCard from "../shared/StandardCard";
 import SplitOptionButtons from "./SplitOptionButtons";
 import { Transactions, Options } from "../../shared/types";
-import Message from "./Message";
+import SplitMessageModal from "./SplitMessageModal";
 
 type ActivityData = {
   activityTitle: string;
@@ -422,7 +421,7 @@ const DashboardInfo = () => {
                 <Button onClick={handleCalculate}>Split transactions</Button>
               </div>
             )}
-            <Message
+            <SplitMessageModal
               text={message}
               onClose={handleModal}
               isModalOpen={isModalOpen}
