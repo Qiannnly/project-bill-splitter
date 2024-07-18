@@ -13,7 +13,7 @@ import { useUserContext } from "../../context/UserContext";
 import { generateContactOptions } from "../../lib/utils";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
-import StandardCard from "../dashboard/StandardCard";
+import StandardCard from "../shared/StandardCard";
 import SelectInput from "../select/SelectInput";
 import useFetchGroups from "../../hooks/useFetchGroups";
 import UserList from "./UserList";
