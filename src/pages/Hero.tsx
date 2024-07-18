@@ -6,12 +6,12 @@ const Hero = () => {
   const navigate = useNavigate();
   return (
     <>
-      <section className="h-fit space-y-9 items-center justify-center m-24 lg:flex lg:mx-96 lg:mt-40">
+      <section className="h-fit space-y-9 items-center justify-center m-24 lg:flex lg:mx-80 lg:mt-48">
         <div className="lg:w-4/6 ">
-          <h1 className="mb-8 text-5xl font-semibold text-center lg:text-left">
+          <h1 className="mb-8 text-5xl font-semibold text-center lg:text-left lg:text-6xl">
             B-Split
           </h1>
-          <p className="text-xl text-center lg:text-left">
+          <p className="text-xl text-center lg:text-left lg:text-3xl">
             Split transactions
             <br /> with ease
           </p>
