@@ -16,7 +16,7 @@ import {
 import TransactionList from "./TransactionList";
 import TripTransactions from "./TripTransactions";
 import SelectInput from "../select/SelectInput";
-import StandardCard from "./StandardCard";
+import StandardCard from "../shared/StandardCard";
 import SplitOptionButtons from "./SplitOptionButtons";
 import { Transactions, Options } from "../../shared/types";
 import Message from "./Message";
@@ -47,6 +47,7 @@ const DashboardInfo = () => {
   const [splitOption, setSplitOption] = useState("");
   const [selectedUser, setSelectedUser] = useState("");
   const [message, setMessage] = useState<string[]>([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const numContacts = Number(groupContacts.length);
   let sumOfEqualSplit = 0;
@@ -213,6 +214,7 @@ const DashboardInfo = () => {
   };
 
   const handleCalculate = async () => {
+    setIsModalOpen(true);
     const contributionsMap = await calculateContributions();
     const contributionsTransactionMap =
       await calculateContributionsWithAmountPaid(contributionsMap);
@@ -336,6 +338,10 @@ const DashboardInfo = () => {
     }
   };
 
+  const handleModal = () => {
+    setIsModalOpen(false);
+    setMessage([]);
+  };
   return (
     <>
       {isLoading && <div className="text-center">Loading...</div>}
@@ -416,11 +422,11 @@ const DashboardInfo = () => {
                 <Button onClick={handleCalculate}>Split transactions</Button>
               </div>
             )}
-            {message.length > 0 && (
-              <div className="text-center">
-                <Message text={message} />
-              </div>
-            )}
+            <Message
+              text={message}
+              onClose={handleModal}
+              isModalOpen={isModalOpen}
+            />
           </div>
         </div>
       )}
