@@ -253,6 +253,7 @@ const DashboardInfo = () => {
     userArray: string[],
     amountSpentArray: number[]
   ) => {
+    if (!selectedUser) return;
     let i = 0;
 
     let j = userArray.length - 1;
