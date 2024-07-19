@@ -166,7 +166,7 @@ const ContactInfo = () => {
               <>
                 <div className="space-y-3">
                   <Input
-                    placeholder="Enter contacts"
+                    placeholder="Enter contact name"
                     type="text"
                     value={contacts.contributor}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
