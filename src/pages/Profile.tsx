@@ -14,7 +14,7 @@ type UserProfile = {
   email: string | null;
 };
 const Profile = () => {
-  const { user, logOut } = useUserContext();
+  const { user } = useUserContext();
   const navigate = useNavigate();
 
   const [userData, setUserData] = useState<UserProfile>({
