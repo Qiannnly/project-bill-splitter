@@ -153,11 +153,11 @@ const DashboardInfo = () => {
     payerContributions: Map<string, number>
   ) => {
     const transactionList = await fetchTransactionList(activityId);
-    const contributionsMap = new Map([...payerContributions]);
+    const copiedPayerContributions = new Map([...payerContributions]);
 
-    if (contributionsMap.size === 0) {
+    if (copiedPayerContributions.size === 0) {
       groupContacts.forEach(({ id }) => {
-        contributionsMap.set(id, 0);
+        copiedPayerContributions.set(id, 0);
       });
     }
     transactionList.forEach((doc) => {
@@ -168,35 +168,37 @@ const DashboardInfo = () => {
       if (splitOption === "evenly") {
         sumOfEqualSplit += totalAmount;
       }
-      if (contributionsMap.has(payerNameId)) {
-        const currentAmt = contributionsMap.get(payerNameId);
+      if (copiedPayerContributions.has(payerNameId)) {
+        const currentAmt = copiedPayerContributions.get(payerNameId);
 
         const newAmount = Number(currentAmt) - Number(totalAmount);
-        contributionsMap.set(payerNameId, newAmount);
+        copiedPayerContributions.set(payerNameId, newAmount);
       } else {
-        contributionsMap.set(payerNameId, totalAmount);
+        copiedPayerContributions.set(payerNameId, totalAmount);
       }
     });
-    return contributionsMap;
+    return copiedPayerContributions;
   };
 
   const calculateAmountSpent = (
     contributionsAndTransactionsMap: Map<string, number>,
     equalSplitAmount: number
   ) => {
-    const finalContributionsMap = new Map([...contributionsAndTransactionsMap]);
+    const copiedContributionsAndTransactionsMap = new Map([
+      ...contributionsAndTransactionsMap,
+    ]);
     groupContacts.forEach(({ id }) => {
-      if (finalContributionsMap.has(id)) {
-        const currentAmount = finalContributionsMap.get(id);
+      if (copiedContributionsAndTransactionsMap.has(id)) {
+        const currentAmount = copiedContributionsAndTransactionsMap.get(id);
 
         const newAmount = Number(currentAmount) + Number(equalSplitAmount);
-        finalContributionsMap.set(id, newAmount);
+        copiedContributionsAndTransactionsMap.set(id, newAmount);
       } else {
-        finalContributionsMap.set(id, equalSplitAmount);
+        copiedContributionsAndTransactionsMap.set(id, equalSplitAmount);
       }
     });
 
-    return finalContributionsMap;
+    return copiedContributionsAndTransactionsMap;
   };
 
   const getUsername = (arr: string[]) => {
