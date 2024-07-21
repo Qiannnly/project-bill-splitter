@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useUserContext } from "../context/UserContext";
 import Layout from "../layout/Layout";
 import Header from "../components/header/Header";
@@ -6,6 +7,7 @@ import ProfileCard from "../components/profile/ProfileCard";
 import ProfileInput from "../components/profile/ProfileInput";
 import { Button } from "../components/ui/button";
 import { CircleUserIcon, Lock, Mail } from "lucide-react";
+import { deleteUser } from "firebase/auth";
 
 type UserProfile = {
   userName: string | null;
@@ -13,6 +15,7 @@ type UserProfile = {
 };
 const Profile = () => {
   const { user, logOut } = useUserContext();
+  const navigate = useNavigate();
 
   const [userData, setUserData] = useState<UserProfile>({
     userName: "",
@@ -28,9 +31,10 @@ const Profile = () => {
     }
   }, [user]);
 
-  const handleDelete = () => {
+  const handleDelete = async () => {
     if (user) {
-      return logOut();
+      await deleteUser(user);
+      navigate("/signup");
     }
   };
 
